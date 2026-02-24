@@ -1,0 +1,1171 @@
+2026-02-24 19:52:03,287 - root - INFO - Starting Distributed Task Processing System
+2026-02-24 19:52:03,314 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:52:03,316 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tasks")
+2026-02-24 19:52:03,318 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-02-24 19:52:03,329 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("tasks")
+2026-02-24 19:52:03,331 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-02-24 19:52:03,340 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE tasks (
+	id INTEGER NOT NULL, 
+	task_type VARCHAR(50) NOT NULL, 
+	payload TEXT NOT NULL, 
+	status VARCHAR(9), 
+	result TEXT, 
+	error_message TEXT, 
+	retry_count INTEGER, 
+	max_retries INTEGER, 
+	created_at DATETIME DEFAULT (CURRENT_TIMESTAMP), 
+	started_at DATETIME, 
+	completed_at DATETIME, 
+	PRIMARY KEY (id)
+)
+
+
+2026-02-24 19:52:03,346 - sqlalchemy.engine.Engine - INFO - [no key 0.00555s] ()
+2026-02-24 19:52:03,359 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_tasks_id ON tasks (id)
+2026-02-24 19:52:03,361 - sqlalchemy.engine.Engine - INFO - [no key 0.00165s] ()
+2026-02-24 19:52:03,375 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:52:03,379 - root - INFO - Task queue initialized
+2026-02-24 19:52:03,438 - watchfiles.main - INFO - 3 changes detected
+2026-02-24 19:52:24,621 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:52:24,623 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tasks")
+2026-02-24 19:52:24,624 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-02-24 19:52:24,630 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:52:24,630 - root - INFO - Starting worker worker-1499671825040
+2026-02-24 19:52:24,924 - watchfiles.main - INFO - 4 changes detected
+2026-02-24 19:53:42,024 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:53:42,041 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:53:42,043 - sqlalchemy.engine.Engine - INFO - [generated in 0.00382s] ('text_processing', '{"text": "This is a sample text for processing our distributed task system."}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:53:42,066 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:53:42,084 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:53:42,090 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:53:42,092 - sqlalchemy.engine.Engine - INFO - [generated in 0.00147s] (1,)
+2026-02-24 19:53:42,097 - root - INFO - Created task 1 of type text_processing
+2026-02-24 19:53:42,098 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:53:42,132 - watchfiles.main - INFO - 3 changes detected
+2026-02-24 19:53:59,296 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:53:59,302 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:53:59,303 - sqlalchemy.engine.Engine - INFO - [generated in 0.00162s] (1,)
+2026-02-24 19:53:59,309 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:15,242 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:15,246 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:15,249 - sqlalchemy.engine.Engine - INFO - [cached since 15.95s ago] (1,)
+2026-02-24 19:54:15,262 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:41,145 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:54:50,340 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:50,342 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tasks")
+2026-02-24 19:54:50,344 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-02-24 19:54:50,349 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:50,362 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:50,369 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:54:50,370 - sqlalchemy.engine.Engine - INFO - [generated in 0.00152s] ('text_processing', '{"text": "This is a test for our distributed task system!"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:54:50,379 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:50,396 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:50,404 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:50,405 - sqlalchemy.engine.Engine - INFO - [generated in 0.00192s] (2,)
+2026-02-24 19:54:50,413 - root - INFO - Created task 2 of type text_processing
+2026-02-24 19:54:50,414 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:50,417 - root - INFO - Executing task 2 of type text_processing
+2026-02-24 19:54:50,424 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:50,426 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:50,429 - sqlalchemy.engine.Engine - INFO - [generated in 0.00187s] (2,)
+2026-02-24 19:54:50,437 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, started_at=? WHERE tasks.id = ?
+2026-02-24 19:54:50,440 - sqlalchemy.engine.Engine - INFO - [generated in 0.00133s] ('RUNNING', '2026-02-24 14:54:50.435833', 2)
+2026-02-24 19:54:50,445 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:50,461 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:50,461 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:50,464 - sqlalchemy.engine.Engine - INFO - [cached since 0.05933s ago] (2,)
+2026-02-24 19:54:50,470 - root - INFO - Updated task 2 status to running
+2026-02-24 19:54:50,471 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:53,487 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:53,487 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:53,494 - sqlalchemy.engine.Engine - INFO - [cached since 3.066s ago] (2,)
+2026-02-24 19:54:53,509 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, result=?, completed_at=? WHERE tasks.id = ?
+2026-02-24 19:54:53,512 - sqlalchemy.engine.Engine - INFO - [generated in 0.00338s] ('COMPLETED', '{"word_count": 9, "char_count": 47, "processed_text": "THIS IS A TEST FOR OUR DISTRIBUTED TASK SYSTEM!", "processing_time": 3.0}', '2026-02-24 14:54:53.505581', 2)
+2026-02-24 19:54:53,526 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:53,564 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:53,566 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:53,567 - sqlalchemy.engine.Engine - INFO - [cached since 3.164s ago] (2,)
+2026-02-24 19:54:53,573 - root - INFO - Updated task 2 status to completed
+2026-02-24 19:54:53,573 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:53,576 - root - INFO - Task 2 completed successfully
+2026-02-24 19:54:53,581 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:53,583 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:53,586 - sqlalchemy.engine.Engine - INFO - [cached since 3.158s ago] (2,)
+2026-02-24 19:54:53,590 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:53,600 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:53,604 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:54:53,605 - sqlalchemy.engine.Engine - INFO - [cached since 3.237s ago] ('ai_summarization', '{"document": "This is a long document that needs summarization."}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:54:53,611 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:53,624 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:53,626 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:53,627 - sqlalchemy.engine.Engine - INFO - [cached since 3.223s ago] (3,)
+2026-02-24 19:54:53,632 - root - INFO - Created task 3 of type ai_summarization
+2026-02-24 19:54:53,633 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:53,636 - root - INFO - Executing task 3 of type ai_summarization
+2026-02-24 19:54:53,640 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:53,642 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:53,643 - sqlalchemy.engine.Engine - INFO - [cached since 3.216s ago] (3,)
+2026-02-24 19:54:53,651 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, started_at=? WHERE tasks.id = ?
+2026-02-24 19:54:53,653 - sqlalchemy.engine.Engine - INFO - [cached since 3.214s ago] ('RUNNING', '2026-02-24 14:54:53.649472', 3)
+2026-02-24 19:54:53,657 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:53,672 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:53,673 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:53,675 - sqlalchemy.engine.Engine - INFO - [cached since 3.271s ago] (3,)
+2026-02-24 19:54:53,679 - root - INFO - Updated task 3 status to running
+2026-02-24 19:54:53,679 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:58,699 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:58,700 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:58,701 - sqlalchemy.engine.Engine - INFO - [cached since 8.274s ago] (3,)
+2026-02-24 19:54:58,705 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, result=?, completed_at=? WHERE tasks.id = ?
+2026-02-24 19:54:58,705 - sqlalchemy.engine.Engine - INFO - [cached since 5.197s ago] ('COMPLETED', '{"summary": "Summary of 49 character document: This is a simulated AI summary.", "original_length": 49, "summary_length": 65, "processing_time": 5.0}', '2026-02-24 14:54:58.703896', 3)
+2026-02-24 19:54:58,723 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:58,735 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:58,737 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:58,737 - sqlalchemy.engine.Engine - INFO - [cached since 8.334s ago] (3,)
+2026-02-24 19:54:58,743 - root - INFO - Updated task 3 status to completed
+2026-02-24 19:54:58,743 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:58,747 - root - INFO - Task 3 completed successfully
+2026-02-24 19:54:58,751 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:58,753 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:54:58,754 - sqlalchemy.engine.Engine - INFO - [cached since 8.386s ago] ('batch_processing', '{"data": ["item1", "item2", "item3"]}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:54:58,759 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:58,774 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:58,775 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:58,776 - sqlalchemy.engine.Engine - INFO - [cached since 8.372s ago] (4,)
+2026-02-24 19:54:58,780 - root - INFO - Created task 4 of type batch_processing
+2026-02-24 19:54:58,781 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:58,783 - root - INFO - Executing task 4 of type batch_processing
+2026-02-24 19:54:58,787 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:58,790 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:58,791 - sqlalchemy.engine.Engine - INFO - [cached since 8.364s ago] (4,)
+2026-02-24 19:54:58,799 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, started_at=? WHERE tasks.id = ?
+2026-02-24 19:54:58,800 - sqlalchemy.engine.Engine - INFO - [cached since 8.361s ago] ('RUNNING', '2026-02-24 14:54:58.798001', 4)
+2026-02-24 19:54:58,805 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:58,819 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:58,821 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:58,823 - sqlalchemy.engine.Engine - INFO - [cached since 8.419s ago] (4,)
+2026-02-24 19:54:58,826 - root - INFO - Updated task 4 status to running
+2026-02-24 19:54:58,826 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:59,147 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:59,150 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:59,151 - sqlalchemy.engine.Engine - INFO - [cached since 8.724s ago] (4,)
+2026-02-24 19:54:59,155 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, result=?, completed_at=? WHERE tasks.id = ?
+2026-02-24 19:54:59,156 - sqlalchemy.engine.Engine - INFO - [cached since 5.648s ago] ('COMPLETED', '{"processed_count": 3, "processing_time": 0.30000000000000004, "data": [{"item": "item1", "processed": true}, {"item": "item2", "processed": true}, {"item": "item3", "processed": true}]}', '2026-02-24 14:54:59.155297', 4)
+2026-02-24 19:54:59,160 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:59,173 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:59,174 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:59,175 - sqlalchemy.engine.Engine - INFO - [cached since 8.771s ago] (4,)
+2026-02-24 19:54:59,179 - root - INFO - Updated task 4 status to completed
+2026-02-24 19:54:59,179 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:59,183 - root - INFO - Task 4 completed successfully
+2026-02-24 19:54:59,187 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:59,190 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:54:59,191 - sqlalchemy.engine.Engine - INFO - [cached since 8.822s ago] ('image_processing', '{"image_url": "http://example.com/image.jpg"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:54:59,197 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:59,211 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:59,216 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:59,218 - sqlalchemy.engine.Engine - INFO - [cached since 8.814s ago] (5,)
+2026-02-24 19:54:59,221 - root - INFO - Created task 5 of type image_processing
+2026-02-24 19:54:59,223 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:54:59,224 - root - INFO - Executing task 5 of type image_processing
+2026-02-24 19:54:59,229 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:59,231 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:59,231 - sqlalchemy.engine.Engine - INFO - [cached since 8.806s ago] (5,)
+2026-02-24 19:54:59,238 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, started_at=? WHERE tasks.id = ?
+2026-02-24 19:54:59,240 - sqlalchemy.engine.Engine - INFO - [cached since 8.801s ago] ('RUNNING', '2026-02-24 14:54:59.238512', 5)
+2026-02-24 19:54:59,243 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:54:59,256 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:54:59,256 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:54:59,261 - sqlalchemy.engine.Engine - INFO - [cached since 8.856s ago] (5,)
+2026-02-24 19:54:59,266 - root - INFO - Updated task 5 status to running
+2026-02-24 19:54:59,268 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:55:03,288 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:03,292 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:55:03,295 - sqlalchemy.engine.Engine - INFO - [cached since 12.87s ago] (5,)
+2026-02-24 19:55:03,309 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, result=?, completed_at=? WHERE tasks.id = ?
+2026-02-24 19:55:03,311 - sqlalchemy.engine.Engine - INFO - [cached since 9.802s ago] ('COMPLETED', '{"original_url": "http://example.com/image.jpg", "resized_url": "resized_http://example.com/image.jpg", "compressed_url": "compressed_http://example.com/image.jpg", "analysis": {"faces": 1, "objects": 5}, "processing_time": 4.0}', '2026-02-24 14:55:03.307401', 5)
+2026-02-24 19:55:03,325 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:55:03,357 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:03,361 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:55:03,365 - sqlalchemy.engine.Engine - INFO - [cached since 12.96s ago] (5,)
+2026-02-24 19:55:03,376 - root - INFO - Updated task 5 status to completed
+2026-02-24 19:55:03,379 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:55:03,386 - root - INFO - Task 5 completed successfully
+2026-02-24 19:55:29,382 - root - INFO - Shutting down Distributed Task Processing System
+2026-02-24 19:55:30,212 - watchfiles.main - INFO - 5 changes detected
+2026-02-24 19:55:35,990 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:36,053 - root - INFO - Starting Distributed Task Processing System
+2026-02-24 19:55:36,065 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:36,068 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tasks")
+2026-02-24 19:55:36,070 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-02-24 19:55:36,076 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:55:36,081 - root - INFO - Task queue initialized
+2026-02-24 19:55:36,096 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:36,102 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:55:36,104 - sqlalchemy.engine.Engine - INFO - [generated in 0.00177s] ('text_processing', '{"text": "This is a sample text that will be processed by our distributed system!"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:55:36,114 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:55:36,129 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:36,136 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:55:36,136 - sqlalchemy.engine.Engine - INFO - [generated in 0.00176s] (6,)
+2026-02-24 19:55:36,142 - root - INFO - Created task 6 of type text_processing
+2026-02-24 19:55:36,144 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:55:36,346 - watchfiles.main - INFO - 4 changes detected
+2026-02-24 19:55:36,760 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:37,176 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:37,593 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:37,960 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:38,188 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:38,192 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:55:38,194 - sqlalchemy.engine.Engine - INFO - [cached since 2.092s ago] ('ai_summarization', '{"document": "This is a long document about artificial intelligence and machine learning. It contains many technical details and concepts that need to be summarized for easier consumption."}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:55:38,203 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:55:38,221 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:38,225 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:55:38,227 - sqlalchemy.engine.Engine - INFO - [cached since 2.092s ago] (7,)
+2026-02-24 19:55:38,234 - root - INFO - Created task 7 of type ai_summarization
+2026-02-24 19:55:38,235 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:55:38,376 - watchfiles.main - INFO - 4 changes detected
+2026-02-24 19:55:38,782 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:39,199 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:39,558 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:39,925 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:40,311 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:40,312 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:55:40,313 - sqlalchemy.engine.Engine - INFO - [cached since 4.211s ago] ('batch_processing', '{"data": ["user1", "user2", "user3", "user4", "user5"]}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:55:40,364 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:55:40,379 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:40,381 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:55:40,385 - sqlalchemy.engine.Engine - INFO - [cached since 4.251s ago] (8,)
+2026-02-24 19:55:40,391 - root - INFO - Created task 8 of type batch_processing
+2026-02-24 19:55:40,393 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:55:40,432 - watchfiles.main - INFO - 4 changes detected
+2026-02-24 19:55:40,845 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:41,300 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:41,708 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:42,115 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:42,440 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:42,444 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:55:42,445 - sqlalchemy.engine.Engine - INFO - [cached since 6.343s ago] ('image_processing', '{"image_url": "https://example.com/sample-image.jpg"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:55:42,467 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:55:42,481 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:42,485 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:55:42,487 - sqlalchemy.engine.Engine - INFO - [cached since 6.352s ago] (9,)
+2026-02-24 19:55:42,492 - root - INFO - Created task 9 of type image_processing
+2026-02-24 19:55:42,494 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:55:42,572 - watchfiles.main - INFO - 4 changes detected
+2026-02-24 19:55:43,033 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:43,450 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:43,858 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:44,271 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:44,543 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:44,547 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:55:44,547 - sqlalchemy.engine.Engine - INFO - [generated in 0.00135s] (6,)
+2026-02-24 19:55:44,553 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:55:44,638 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:45,105 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:45,516 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:45,931 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:46,340 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:46,703 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:47,110 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:47,563 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:47,972 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:48,380 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:48,597 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:48,599 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:55:48,601 - sqlalchemy.engine.Engine - INFO - [cached since 4.055s ago] (6,)
+2026-02-24 19:55:48,611 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:55:48,785 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:49,199 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:49,703 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:50,111 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:50,515 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:50,927 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:51,337 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:51,744 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:52,153 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:52,568 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:52,731 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:52,735 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:55:52,739 - sqlalchemy.engine.Engine - INFO - [cached since 8.192s ago] (6,)
+2026-02-24 19:55:52,751 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:55:52,983 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:53,440 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:53,858 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:54,267 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:54,731 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:55,085 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:55,496 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:55,950 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:56,359 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:56,764 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:56,805 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:55:56,807 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:55:56,808 - sqlalchemy.engine.Engine - INFO - [cached since 12.26s ago] (6,)
+2026-02-24 19:55:56,814 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:55:57,227 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:57,590 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:57,951 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:58,316 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:58,681 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:59,046 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:59,398 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:55:59,815 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:00,226 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:00,632 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:00,855 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:00,858 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:00,859 - sqlalchemy.engine.Engine - INFO - [cached since 16.31s ago] (6,)
+2026-02-24 19:56:00,872 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:01,040 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:01,458 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:01,865 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:02,268 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:02,677 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:03,094 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:03,511 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:03,877 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:04,292 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:04,694 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:04,989 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:04,991 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:04,993 - sqlalchemy.engine.Engine - INFO - [cached since 20.45s ago] (6,)
+2026-02-24 19:56:04,997 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:05,098 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:05,557 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:05,968 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:06,379 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:06,787 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:07,203 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:07,619 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:08,029 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:08,390 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:08,752 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:09,048 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:09,050 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:09,053 - sqlalchemy.engine.Engine - INFO - [cached since 24.51s ago] (6,)
+2026-02-24 19:56:09,063 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:09,119 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:09,472 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:09,827 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:10,235 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:10,639 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:11,043 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:11,449 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:11,906 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:12,313 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:12,771 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:13,124 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:13,125 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:13,126 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:13,126 - sqlalchemy.engine.Engine - INFO - [cached since 28.58s ago] (6,)
+2026-02-24 19:56:13,130 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:13,591 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:13,957 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:14,373 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:14,779 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:15,185 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:15,598 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:16,004 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:16,369 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:16,824 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:17,169 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:17,170 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:17,172 - sqlalchemy.engine.Engine - INFO - [cached since 32.63s ago] (7,)
+2026-02-24 19:56:17,179 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:17,189 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:17,548 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:17,913 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:18,267 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:18,676 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:19,084 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:19,538 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:19,948 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:20,354 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:20,765 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:21,175 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:21,242 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:21,247 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:21,250 - sqlalchemy.engine.Engine - INFO - [cached since 36.7s ago] (7,)
+2026-02-24 19:56:21,261 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:21,632 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:22,045 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:22,472 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:22,829 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:23,184 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:23,550 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:23,954 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:24,315 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:24,675 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:25,129 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:25,325 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:25,329 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:25,332 - sqlalchemy.engine.Engine - INFO - [cached since 40.79s ago] (7,)
+2026-02-24 19:56:25,345 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:25,537 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:25,953 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:26,372 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:26,735 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:56:29,399 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:29,401 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:29,402 - sqlalchemy.engine.Engine - INFO - [cached since 44.86s ago] (7,)
+2026-02-24 19:56:29,407 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:33,453 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:33,453 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:33,455 - sqlalchemy.engine.Engine - INFO - [cached since 48.91s ago] (7,)
+2026-02-24 19:56:33,461 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:37,520 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:37,523 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:37,526 - sqlalchemy.engine.Engine - INFO - [cached since 52.98s ago] (7,)
+2026-02-24 19:56:37,540 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:41,616 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:41,621 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:41,623 - sqlalchemy.engine.Engine - INFO - [cached since 57.08s ago] (7,)
+2026-02-24 19:56:41,634 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:45,697 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:45,700 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:45,701 - sqlalchemy.engine.Engine - INFO - [cached since 61.15s ago] (7,)
+2026-02-24 19:56:45,707 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:49,759 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:49,761 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:49,762 - sqlalchemy.engine.Engine - INFO - [cached since 65.22s ago] (8,)
+2026-02-24 19:56:49,768 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:53,813 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:53,816 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:53,818 - sqlalchemy.engine.Engine - INFO - [cached since 69.27s ago] (8,)
+2026-02-24 19:56:53,829 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:56:57,887 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:56:57,890 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:56:57,893 - sqlalchemy.engine.Engine - INFO - [cached since 73.35s ago] (8,)
+2026-02-24 19:56:57,898 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:01,952 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:01,954 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:01,955 - sqlalchemy.engine.Engine - INFO - [cached since 77.41s ago] (8,)
+2026-02-24 19:57:01,962 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:06,055 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:06,059 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:06,062 - sqlalchemy.engine.Engine - INFO - [cached since 81.52s ago] (8,)
+2026-02-24 19:57:06,074 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:10,131 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:10,131 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:10,131 - sqlalchemy.engine.Engine - INFO - [cached since 85.59s ago] (8,)
+2026-02-24 19:57:10,137 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:14,197 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:14,200 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:14,202 - sqlalchemy.engine.Engine - INFO - [cached since 89.66s ago] (8,)
+2026-02-24 19:57:14,212 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:18,259 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:18,262 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:18,264 - sqlalchemy.engine.Engine - INFO - [cached since 93.72s ago] (8,)
+2026-02-24 19:57:18,274 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:22,323 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:22,326 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:22,326 - sqlalchemy.engine.Engine - INFO - [cached since 97.78s ago] (9,)
+2026-02-24 19:57:22,331 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:26,391 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:26,393 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:26,395 - sqlalchemy.engine.Engine - INFO - [cached since 101.8s ago] (9,)
+2026-02-24 19:57:26,399 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:30,456 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:30,460 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:30,461 - sqlalchemy.engine.Engine - INFO - [cached since 105.9s ago] (9,)
+2026-02-24 19:57:30,469 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:34,534 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:34,535 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:34,538 - sqlalchemy.engine.Engine - INFO - [cached since 110s ago] (9,)
+2026-02-24 19:57:34,543 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:38,587 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:38,590 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:38,593 - sqlalchemy.engine.Engine - INFO - [cached since 114s ago] (9,)
+2026-02-24 19:57:38,606 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:42,659 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:42,662 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:42,664 - sqlalchemy.engine.Engine - INFO - [cached since 118.1s ago] (9,)
+2026-02-24 19:57:42,669 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:46,720 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:46,725 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:46,729 - sqlalchemy.engine.Engine - INFO - [cached since 122.2s ago] (9,)
+2026-02-24 19:57:46,745 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:57:50,815 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:57:50,815 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:57:50,819 - sqlalchemy.engine.Engine - INFO - [cached since 126.3s ago] (9,)
+2026-02-24 19:57:50,826 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:02,973 - watchfiles.main - INFO - 1 change detected
+2026-02-24 19:58:12,043 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:12,043 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tasks")
+2026-02-24 19:58:12,045 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-02-24 19:58:12,051 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:58:12,062 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:12,070 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:58:12,071 - sqlalchemy.engine.Engine - INFO - [generated in 0.00186s] ('text_processing', '{"text": "This text will be processed asynchronously!"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:58:12,174 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:58:12,219 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:12,228 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:12,230 - sqlalchemy.engine.Engine - INFO - [generated in 0.00178s] (10,)
+2026-02-24 19:58:12,235 - root - INFO - Created task 10 of type text_processing
+2026-02-24 19:58:12,237 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:12,247 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:12,249 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:58:12,249 - sqlalchemy.engine.Engine - INFO - [cached since 0.1808s ago] ('ai_summarization', '{"document": "Long document about AI and ML that needs summarization."}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:58:12,257 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:58:12,275 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:12,276 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:12,276 - sqlalchemy.engine.Engine - INFO - [cached since 0.04893s ago] (11,)
+2026-02-24 19:58:12,282 - root - INFO - Created task 11 of type ai_summarization
+2026-02-24 19:58:12,282 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:12,290 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:12,293 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:58:12,294 - sqlalchemy.engine.Engine - INFO - [cached since 0.2247s ago] ('batch_processing', '{"data": ["item1", "item2", "item3", "item4", "item5"]}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:58:12,301 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:58:12,316 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:12,318 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:12,319 - sqlalchemy.engine.Engine - INFO - [cached since 0.09135s ago] (12,)
+2026-02-24 19:58:12,323 - root - INFO - Created task 12 of type batch_processing
+2026-02-24 19:58:12,324 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:12,332 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:12,336 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:12,336 - sqlalchemy.engine.Engine - INFO - [generated in 0.00163s] (10,)
+2026-02-24 19:58:12,343 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:12,347 - root - INFO - Executing task 10 of type text_processing
+2026-02-24 19:58:12,351 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:12,353 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:12,355 - sqlalchemy.engine.Engine - INFO - [cached since 0.01761s ago] (10,)
+2026-02-24 19:58:12,363 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, started_at=? WHERE tasks.id = ?
+2026-02-24 19:58:12,366 - sqlalchemy.engine.Engine - INFO - [generated in 0.00141s] ('RUNNING', '2026-02-24 14:58:12.360143', 10)
+2026-02-24 19:58:12,370 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:58:12,383 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:12,385 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:12,386 - sqlalchemy.engine.Engine - INFO - [cached since 0.159s ago] (10,)
+2026-02-24 19:58:12,391 - root - INFO - Updated task 10 status to running
+2026-02-24 19:58:12,392 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:15,411 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:15,412 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:15,414 - sqlalchemy.engine.Engine - INFO - [cached since 3.078s ago] (10,)
+2026-02-24 19:58:15,421 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, result=?, completed_at=? WHERE tasks.id = ?
+2026-02-24 19:58:15,423 - sqlalchemy.engine.Engine - INFO - [generated in 0.00170s] ('COMPLETED', '{"word_count": 6, "char_count": 43, "processed_text": "THIS TEXT WILL BE PROCESSED ASYNCHRONOUSLY!", "processing_time": 3.0}', '2026-02-24 14:58:15.419781', 10)
+2026-02-24 19:58:15,429 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:58:15,444 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:15,445 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:15,445 - sqlalchemy.engine.Engine - INFO - [cached since 3.218s ago] (10,)
+2026-02-24 19:58:15,449 - root - INFO - Updated task 10 status to completed
+2026-02-24 19:58:15,451 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:15,454 - root - INFO - Task 10 completed successfully
+2026-02-24 19:58:15,459 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:15,461 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:15,461 - sqlalchemy.engine.Engine - INFO - [cached since 3.126s ago] (11,)
+2026-02-24 19:58:15,465 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:15,469 - root - INFO - Executing task 11 of type ai_summarization
+2026-02-24 19:58:15,473 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:15,474 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:15,477 - sqlalchemy.engine.Engine - INFO - [cached since 3.14s ago] (11,)
+2026-02-24 19:58:15,482 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, started_at=? WHERE tasks.id = ?
+2026-02-24 19:58:15,482 - sqlalchemy.engine.Engine - INFO - [cached since 3.12s ago] ('RUNNING', '2026-02-24 14:58:15.482214', 11)
+2026-02-24 19:58:15,487 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:58:15,501 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:15,504 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:15,505 - sqlalchemy.engine.Engine - INFO - [cached since 3.277s ago] (11,)
+2026-02-24 19:58:15,509 - root - INFO - Updated task 11 status to running
+2026-02-24 19:58:15,509 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:20,523 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:20,527 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:20,529 - sqlalchemy.engine.Engine - INFO - [cached since 8.192s ago] (11,)
+2026-02-24 19:58:20,537 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, result=?, completed_at=? WHERE tasks.id = ?
+2026-02-24 19:58:20,542 - sqlalchemy.engine.Engine - INFO - [cached since 5.12s ago] ('COMPLETED', '{"summary": "Summary of 55 character document: This is a simulated AI summary.", "original_length": 55, "summary_length": 65, "processing_time": 5.0}', '2026-02-24 14:58:20.537268', 11)
+2026-02-24 19:58:20,598 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:58:20,631 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:20,632 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:20,635 - sqlalchemy.engine.Engine - INFO - [cached since 8.407s ago] (11,)
+2026-02-24 19:58:20,644 - root - INFO - Updated task 11 status to completed
+2026-02-24 19:58:20,645 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:20,653 - root - INFO - Task 11 completed successfully
+2026-02-24 19:58:20,665 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:20,668 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:20,670 - sqlalchemy.engine.Engine - INFO - [cached since 8.333s ago] (12,)
+2026-02-24 19:58:20,681 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:20,686 - root - INFO - Executing task 12 of type batch_processing
+2026-02-24 19:58:20,698 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:20,701 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:20,705 - sqlalchemy.engine.Engine - INFO - [cached since 8.368s ago] (12,)
+2026-02-24 19:58:20,717 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, started_at=? WHERE tasks.id = ?
+2026-02-24 19:58:20,720 - sqlalchemy.engine.Engine - INFO - [cached since 8.356s ago] ('RUNNING', '2026-02-24 14:58:20.715896', 12)
+2026-02-24 19:58:20,731 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:58:20,761 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:20,764 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:20,766 - sqlalchemy.engine.Engine - INFO - [cached since 8.538s ago] (12,)
+2026-02-24 19:58:20,775 - root - INFO - Updated task 12 status to running
+2026-02-24 19:58:20,777 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:21,295 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:21,297 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:21,299 - sqlalchemy.engine.Engine - INFO - [cached since 8.962s ago] (12,)
+2026-02-24 19:58:21,304 - sqlalchemy.engine.Engine - INFO - UPDATE tasks SET status=?, result=?, completed_at=? WHERE tasks.id = ?
+2026-02-24 19:58:21,305 - sqlalchemy.engine.Engine - INFO - [cached since 5.883s ago] ('COMPLETED', '{"processed_count": 5, "processing_time": 0.5, "data": [{"item": "item1", "processed": true}, {"item": "item2", "processed": true}, {"item": "item3", "processed": true}, {"item": "item4", "processed": true}, {"item": "item5", "processed": true}]}', '2026-02-24 14:58:21.303529', 12)
+2026-02-24 19:58:21,310 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:58:21,320 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:21,321 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:21,323 - sqlalchemy.engine.Engine - INFO - [cached since 9.095s ago] (12,)
+2026-02-24 19:58:21,326 - root - INFO - Updated task 12 status to completed
+2026-02-24 19:58:21,327 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:21,331 - root - INFO - Task 12 completed successfully
+2026-02-24 19:58:21,337 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:21,337 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:21,340 - sqlalchemy.engine.Engine - INFO - [cached since 9.003s ago] (10,)
+2026-02-24 19:58:21,344 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:21,354 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:21,355 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:21,357 - sqlalchemy.engine.Engine - INFO - [cached since 9.019s ago] (11,)
+2026-02-24 19:58:21,363 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:58:21,370 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:58:21,371 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:58:21,371 - sqlalchemy.engine.Engine - INFO - [cached since 9.036s ago] (12,)
+2026-02-24 19:58:21,382 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:16,714 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-02-24 19:59:16,731 - httpx - INFO - HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-02-24 19:59:16,762 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:16,770 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:59:16,772 - sqlalchemy.engine.Engine - INFO - [generated in 0.00132s] ('text_processing', '{"text": "Test text for processing"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:59:16,777 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:59:16,793 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:16,801 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:16,801 - sqlalchemy.engine.Engine - INFO - [generated in 0.00077s] (13,)
+2026-02-24 19:59:16,805 - root - INFO - Created task 13 of type text_processing
+2026-02-24 19:59:16,806 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:16,814 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 19:59:16,833 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 500 Internal Server Error"
+2026-02-24 19:59:17,447 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,449 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:59:17,449 - sqlalchemy.engine.Engine - INFO - [cached since 0.679s ago] ('text_processing', '{"text": "Test text"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:59:17,455 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:59:17,469 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,471 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:17,471 - sqlalchemy.engine.Engine - INFO - [cached since 0.6709s ago] (14,)
+2026-02-24 19:59:17,476 - root - INFO - Created task 14 of type text_processing
+2026-02-24 19:59:17,476 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:17,481 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 19:59:17,493 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,497 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:17,497 - sqlalchemy.engine.Engine - INFO - [generated in 0.00069s] (14,)
+2026-02-24 19:59:17,505 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:17,509 - httpx - INFO - HTTP Request: GET http://testserver/tasks/14 "HTTP/1.1 200 OK"
+2026-02-24 19:59:17,530 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,532 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:17,533 - sqlalchemy.engine.Engine - INFO - [cached since 0.0355s ago] (99999,)
+2026-02-24 19:59:17,537 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:17,543 - httpx - INFO - HTTP Request: GET http://testserver/tasks/99999 "HTTP/1.1 404 Not Found"
+2026-02-24 19:59:17,566 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,567 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:59:17,567 - sqlalchemy.engine.Engine - INFO - [cached since 0.7977s ago] ('text_processing', '{"text": "Test text 0"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:59:17,576 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:59:17,592 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,593 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:17,593 - sqlalchemy.engine.Engine - INFO - [cached since 0.7935s ago] (15,)
+2026-02-24 19:59:17,599 - root - INFO - Created task 15 of type text_processing
+2026-02-24 19:59:17,599 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:17,606 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 19:59:17,619 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,620 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:59:17,622 - sqlalchemy.engine.Engine - INFO - [cached since 0.8509s ago] ('text_processing', '{"text": "Test text 1"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:59:17,629 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:59:17,644 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,645 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:17,649 - sqlalchemy.engine.Engine - INFO - [cached since 0.8475s ago] (16,)
+2026-02-24 19:59:17,654 - root - INFO - Created task 16 of type text_processing
+2026-02-24 19:59:17,655 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:17,662 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 19:59:17,674 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,676 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:59:17,676 - sqlalchemy.engine.Engine - INFO - [cached since 0.9055s ago] ('text_processing', '{"text": "Test text 2"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:59:17,682 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:59:17,699 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,699 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:17,699 - sqlalchemy.engine.Engine - INFO - [cached since 0.8999s ago] (17,)
+2026-02-24 19:59:17,705 - root - INFO - Created task 17 of type text_processing
+2026-02-24 19:59:17,705 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:17,712 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 19:59:17,723 - httpx - INFO - HTTP Request: GET http://testserver/tasks/ "HTTP/1.1 200 OK"
+2026-02-24 19:59:17,745 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,747 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:59:17,747 - sqlalchemy.engine.Engine - INFO - [cached since 0.9779s ago] ('text_processing', '{"text": "Test text"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:59:17,756 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:59:17,770 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,771 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:17,771 - sqlalchemy.engine.Engine - INFO - [cached since 0.9714s ago] (18,)
+2026-02-24 19:59:17,776 - root - INFO - Created task 18 of type text_processing
+2026-02-24 19:59:17,776 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:17,782 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 19:59:17,795 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,795 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:59:17,797 - sqlalchemy.engine.Engine - INFO - [cached since 1.027s ago] ('ai_summarization', '{"text": "Test text"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:59:17,801 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:59:17,811 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,812 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:17,812 - sqlalchemy.engine.Engine - INFO - [cached since 1.012s ago] (19,)
+2026-02-24 19:59:17,815 - root - INFO - Created task 19 of type ai_summarization
+2026-02-24 19:59:17,816 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:17,820 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 19:59:17,827 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,828 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:59:17,828 - sqlalchemy.engine.Engine - INFO - [cached since 1.058s ago] ('batch_processing', '{"data": ["item1", "item2", "item3"]}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:59:17,831 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:59:17,841 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,842 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:17,842 - sqlalchemy.engine.Engine - INFO - [cached since 1.042s ago] (20,)
+2026-02-24 19:59:17,845 - root - INFO - Created task 20 of type batch_processing
+2026-02-24 19:59:17,845 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:17,849 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 19:59:17,858 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,859 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 19:59:17,861 - sqlalchemy.engine.Engine - INFO - [cached since 1.089s ago] ('image_processing', '{"image_url": "http://example.com/image.jpg"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 19:59:17,866 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 19:59:17,876 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 19:59:17,878 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 19:59:17,879 - sqlalchemy.engine.Engine - INFO - [cached since 1.078s ago] (21,)
+2026-02-24 19:59:17,882 - root - INFO - Created task 21 of type image_processing
+2026-02-24 19:59:17,882 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 19:59:17,890 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 20:00:23,940 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 500 Internal Server Error"
+2026-02-24 20:00:32,520 - root - INFO - Shutting down Distributed Task Processing System
+2026-02-24 20:00:33,220 - watchfiles.main - INFO - 41 changes detected
+2026-02-24 20:00:39,068 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:39,157 - root - INFO - Starting Distributed Task Processing System
+2026-02-24 20:00:39,167 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:00:39,169 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tasks")
+2026-02-24 20:00:39,170 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-02-24 20:00:39,176 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:00:39,179 - root - INFO - Task queue initialized
+2026-02-24 20:00:39,437 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:39,839 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:40,247 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:40,704 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:41,109 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:41,520 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:41,924 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:42,328 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:42,735 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:43,112 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 500 Internal Server Error"
+2026-02-24 20:00:43,190 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:43,598 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:44,067 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:44,484 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:44,892 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:45,250 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:45,629 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:45,982 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:46,344 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:46,710 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:47,063 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:47,421 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:47,827 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:48,244 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:48,649 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:49,064 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:49,474 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:00:49,877 - watchfiles.main - INFO - 2 changes detected
+2026-02-24 20:01:30,090 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 500 Internal Server Error"
+2026-02-24 20:01:56,182 - root - INFO - Shutting down Distributed Task Processing System
+2026-02-24 20:01:56,991 - watchfiles.main - INFO - 9 changes detected
+2026-02-24 20:02:01,542 - watchfiles.main - INFO - 5 changes detected
+2026-02-24 20:02:01,907 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:01,913 - root - INFO - Starting Distributed Task Processing System
+2026-02-24 20:02:01,920 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:01,923 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tasks")
+2026-02-24 20:02:01,923 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-02-24 20:02:01,929 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:02:01,932 - root - INFO - Task queue initialized
+2026-02-24 20:02:02,320 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:02,723 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:03,140 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:03,544 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:03,951 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:04,358 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:04,381 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 500 Internal Server Error"
+2026-02-24 20:02:04,816 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:05,175 - watchfiles.main - INFO - 3 changes detected
+2026-02-24 20:02:05,531 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:05,984 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:06,390 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:06,807 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:07,212 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:07,622 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:08,036 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:08,441 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:08,843 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:09,246 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:09,655 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:10,116 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:10,520 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:10,938 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:11,348 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:11,752 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:12,218 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:12,635 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:13,054 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:13,464 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:13,869 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:14,336 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:14,753 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:15,162 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:15,570 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:15,969 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:16,374 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:16,785 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:17,193 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:17,600 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:18,015 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:18,427 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:18,830 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:19,234 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:19,651 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:20,056 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:20,462 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:20,874 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:21,279 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:21,734 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:22,139 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:22,595 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:23,012 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:23,415 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:23,831 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:24,243 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:24,648 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:25,065 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:25,479 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:26,192 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:26,599 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:27,010 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:27,476 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:27,889 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:28,295 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:28,805 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:29,311 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:29,720 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:30,126 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:30,538 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:30,900 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:31,414 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:31,776 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:02:45,207 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-02-24 20:02:45,224 - httpx - INFO - HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-02-24 20:02:45,253 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,261 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 20:02:45,308 - sqlalchemy.engine.Engine - INFO - [generated in 0.04749s] ('text_processing', '{"text": "Test text for processing"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 20:02:45,320 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:02:45,354 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,369 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:45,371 - sqlalchemy.engine.Engine - INFO - [generated in 0.00255s] (22,)
+2026-02-24 20:02:45,381 - root - INFO - Created task 22 of type text_processing
+2026-02-24 20:02:45,386 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:45,399 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 20:02:45,443 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 500 Internal Server Error"
+2026-02-24 20:02:45,485 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,487 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 20:02:45,491 - sqlalchemy.engine.Engine - INFO - [cached since 0.2291s ago] ('text_processing', '{"text": "Test text"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 20:02:45,550 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:02:45,576 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,578 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:45,579 - sqlalchemy.engine.Engine - INFO - [cached since 0.2109s ago] (23,)
+2026-02-24 20:02:45,588 - root - INFO - Created task 23 of type text_processing
+2026-02-24 20:02:45,590 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:45,605 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 20:02:45,626 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,631 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:45,631 - sqlalchemy.engine.Engine - INFO - [generated in 0.00113s] (23,)
+2026-02-24 20:02:45,637 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:45,650 - httpx - INFO - HTTP Request: GET http://testserver/tasks/23 "HTTP/1.1 200 OK"
+2026-02-24 20:02:45,681 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,684 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:45,687 - sqlalchemy.engine.Engine - INFO - [cached since 0.05614s ago] (99999,)
+2026-02-24 20:02:45,695 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:45,705 - httpx - INFO - HTTP Request: GET http://testserver/tasks/99999 "HTTP/1.1 404 Not Found"
+2026-02-24 20:02:45,741 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,745 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 20:02:45,745 - sqlalchemy.engine.Engine - INFO - [cached since 0.4848s ago] ('text_processing', '{"text": "Test text 0"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 20:02:45,803 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:02:45,829 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,831 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:45,831 - sqlalchemy.engine.Engine - INFO - [cached since 0.4641s ago] (24,)
+2026-02-24 20:02:45,840 - root - INFO - Created task 24 of type text_processing
+2026-02-24 20:02:45,842 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:45,855 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 20:02:45,879 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,881 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 20:02:45,881 - sqlalchemy.engine.Engine - INFO - [cached since 0.6206s ago] ('text_processing', '{"text": "Test text 1"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 20:02:45,892 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:02:45,920 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,922 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:45,923 - sqlalchemy.engine.Engine - INFO - [cached since 0.5548s ago] (25,)
+2026-02-24 20:02:45,931 - root - INFO - Created task 25 of type text_processing
+2026-02-24 20:02:45,933 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:45,943 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 20:02:45,966 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:45,968 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 20:02:45,969 - sqlalchemy.engine.Engine - INFO - [cached since 0.7083s ago] ('text_processing', '{"text": "Test text 2"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 20:02:45,980 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:02:46,009 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:46,011 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:46,012 - sqlalchemy.engine.Engine - INFO - [cached since 0.6435s ago] (26,)
+2026-02-24 20:02:46,019 - root - INFO - Created task 26 of type text_processing
+2026-02-24 20:02:46,020 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:46,031 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 20:02:46,049 - httpx - INFO - HTTP Request: GET http://testserver/tasks/ "HTTP/1.1 200 OK"
+2026-02-24 20:02:46,082 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:46,087 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 20:02:46,088 - sqlalchemy.engine.Engine - INFO - [cached since 0.827s ago] ('text_processing', '{"text": "Test text"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 20:02:46,097 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:02:46,120 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:46,123 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:46,123 - sqlalchemy.engine.Engine - INFO - [cached since 0.7552s ago] (27,)
+2026-02-24 20:02:46,131 - root - INFO - Created task 27 of type text_processing
+2026-02-24 20:02:46,131 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:46,140 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 20:02:46,159 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:46,162 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 20:02:46,163 - sqlalchemy.engine.Engine - INFO - [cached since 0.9021s ago] ('ai_summarization', '{"text": "Test text"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 20:02:46,172 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:02:46,197 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:46,198 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:46,199 - sqlalchemy.engine.Engine - INFO - [cached since 0.831s ago] (28,)
+2026-02-24 20:02:46,208 - root - INFO - Created task 28 of type ai_summarization
+2026-02-24 20:02:46,209 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:46,221 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 20:02:46,242 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:46,245 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 20:02:46,246 - sqlalchemy.engine.Engine - INFO - [cached since 0.9854s ago] ('batch_processing', '{"data": ["item1", "item2", "item3"]}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 20:02:46,256 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:02:46,281 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:46,284 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:46,286 - sqlalchemy.engine.Engine - INFO - [cached since 0.9172s ago] (29,)
+2026-02-24 20:02:46,294 - root - INFO - Created task 29 of type batch_processing
+2026-02-24 20:02:46,295 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:46,306 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 20:02:46,327 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:46,330 - sqlalchemy.engine.Engine - INFO - INSERT INTO tasks (task_type, payload, status, result, error_message, retry_count, max_retries, started_at, completed_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+2026-02-24 20:02:46,331 - sqlalchemy.engine.Engine - INFO - [cached since 1.07s ago] ('image_processing', '{"image_url": "http://example.com/image.jpg"}', 'PENDING', None, None, 0, 3, None, None)
+2026-02-24 20:02:46,342 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-02-24 20:02:46,373 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-02-24 20:02:46,375 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id, tasks.task_type, tasks.payload, tasks.status, tasks.result, tasks.error_message, tasks.retry_count, tasks.max_retries, tasks.created_at, tasks.started_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-02-24 20:02:46,375 - sqlalchemy.engine.Engine - INFO - [cached since 1.007s ago] (30,)
+2026-02-24 20:02:46,381 - root - INFO - Created task 30 of type image_processing
+2026-02-24 20:02:46,381 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-02-24 20:02:46,393 - httpx - INFO - HTTP Request: POST http://testserver/tasks/ "HTTP/1.1 201 Created"
+2026-02-24 20:06:19,651 - root - INFO - Shutting down Distributed Task Processing System
+2026-02-24 20:06:20,674 - watchfiles.main - INFO - 24 changes detected
+2026-02-24 20:06:22,681 - watchfiles.main - INFO - 10 changes detected
+2026-02-24 20:06:25,783 - watchfiles.main - INFO - 4 changes detected
+2026-02-24 20:06:26,136 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:26,492 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:26,857 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:27,212 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:27,571 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:27,925 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:28,283 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:28,637 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:29,046 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:29,453 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:29,859 - watchfiles.main - INFO - 1 change detected
+2026-02-24 20:06:30,279 - watchfiles.main - INFO - 1 change detected
