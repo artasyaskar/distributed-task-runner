@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from app.api.tasks import router as tasks_router
+from app.api.retry_management import router as retry_router
 from app.core.config import settings
 from app.core.logging import logger
 from app.services.task_queue import task_queue
@@ -54,6 +55,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(tasks_router)
+app.include_router(retry_router)
 
 
 @app.get("/")
