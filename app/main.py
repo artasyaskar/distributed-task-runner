@@ -3,9 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from app.api.tasks import router as tasks_router
 from app.api.retry_management import router as retry_router
+from app.api.monitoring import router as monitoring_router
 from app.core.config import settings
 from app.core.logging import logger
 from app.services.task_queue import task_queue
+from app.services.monitoring_service import monitoring_service
 
 
 @asynccontextmanager
@@ -23,10 +25,23 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.warning(f"Redis not available, using in-memory queue: {str(e)}")
     
+    # Start monitoring service
+    try:
+        await monitoring_service.start_monitoring()
+        logger.info("Monitoring service started")
+    except Exception as e:
+        logger.warning(f"Monitoring service failed to start: {str(e)}")
+    
     logger.info("Task queue initialized")
     yield
     # Shutdown
     logger.info("Shutting down Distributed Task Processing System")
+    
+    # Stop monitoring service
+    try:
+        await monitoring_service.stop_monitoring()
+    except:
+        pass
     
     # Close Redis connection if available
     try:
@@ -56,6 +71,7 @@ app.add_middleware(
 # Include routers
 app.include_router(tasks_router)
 app.include_router(retry_router)
+app.include_router(monitoring_router)
 
 
 @app.get("/")

@@ -1,6 +1,6 @@
 import json
 import asyncio
-import aioredis
+import redis.asyncio as redis
 from typing import Dict, Any, Optional
 from app.core.config import settings
 from app.core.logging import logger
@@ -19,7 +19,7 @@ class RedisTaskQueue:
     async def initialize(self):
         """Initialize Redis connection"""
         try:
-            self.redis_client = aioredis.from_url(settings.redis_url)
+            self.redis_client = redis.from_url(settings.redis_url)
             # Test connection
             await self.redis_client.ping()
             logger.info("Redis connection established")
