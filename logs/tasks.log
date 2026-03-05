@@ -59,3 +59,98 @@
 2026-03-05 11:35:51,004 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
 2026-03-05 11:35:51,006 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
 2026-03-05 11:35:51,008 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:36:10,167 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=49.5
+2026-03-05 11:36:10,168 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=84.3
+2026-03-05 11:36:10,170 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:36:10,172 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:36:10,174 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:36:29,418 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=41.8
+2026-03-05 11:36:29,419 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=86.9
+2026-03-05 11:36:29,423 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:36:29,425 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:36:29,429 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:36:29,454 - distributed-task-system - WARNING - enhanced_logger:_log_with_context:226 - System health: critical
+2026-03-05 11:36:48,592 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=44.2
+2026-03-05 11:36:48,600 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=87.6
+2026-03-05 11:36:48,612 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:36:48,623 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:36:48,638 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:37:07,829 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=39.8
+2026-03-05 11:37:07,834 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=90.1
+2026-03-05 11:37:07,838 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:37:07,842 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:37:07,845 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:37:07,852 - distributed-task-system - WARNING - enhanced_logger:_log_with_context:226 - System health: critical
+2026-03-05 11:37:27,024 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=43.5
+2026-03-05 11:37:27,025 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=91.6
+2026-03-05 11:37:27,030 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:37:27,034 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:37:27,038 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:37:46,225 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=41.0
+2026-03-05 11:37:46,227 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=91.4
+2026-03-05 11:37:46,232 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:37:46,235 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:37:46,239 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:37:46,246 - distributed-task-system - WARNING - enhanced_logger:_log_with_context:226 - System health: critical
+2026-03-05 11:38:00,072 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Stopping monitoring service
+2026-03-05 11:38:00,099 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=31.2
+2026-03-05 11:38:00,103 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=93.5
+2026-03-05 11:38:00,107 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:38:00,112 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:38:00,117 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:38:47,918 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Starting monitoring service
+2026-03-05 11:38:48,963 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Cleaned up old metrics
+2026-03-05 11:38:57,081 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=79.5
+2026-03-05 11:38:57,084 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=92.6
+2026-03-05 11:38:57,092 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:38:57,100 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:38:57,105 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:38:57,114 - distributed-task-system - WARNING - enhanced_logger:_log_with_context:226 - System health: critical
+2026-03-05 11:39:16,304 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=61.2
+2026-03-05 11:39:16,307 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=93.8
+2026-03-05 11:39:16,313 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:39:16,316 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:39:16,321 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:39:35,498 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=53.4
+2026-03-05 11:39:35,501 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=81.4
+2026-03-05 11:39:35,507 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:39:35,511 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:39:35,516 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:39:35,522 - distributed-task-system - WARNING - enhanced_logger:_log_with_context:226 - System health: critical
+2026-03-05 11:39:54,661 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=30.7
+2026-03-05 11:39:54,665 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=79.3
+2026-03-05 11:39:54,668 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:39:54,671 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:40:14,288 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=47.3
+2026-03-05 11:40:14,297 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=85.9
+2026-03-05 11:40:14,304 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:40:14,310 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:40:14,316 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:40:14,325 - distributed-task-system - WARNING - enhanced_logger:_log_with_context:226 - System health: critical
+2026-03-05 11:40:33,491 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=41.1
+2026-03-05 11:40:33,498 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=93.3
+2026-03-05 11:40:33,512 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:40:33,525 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:40:33,535 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:40:52,771 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=46.8
+2026-03-05 11:40:52,827 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=90.9
+2026-03-05 11:40:52,839 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:40:52,848 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:40:52,857 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:40:52,875 - distributed-task-system - WARNING - enhanced_logger:_log_with_context:226 - System health: critical
+2026-03-05 11:41:12,041 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=49.7
+2026-03-05 11:41:12,042 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=88.8
+2026-03-05 11:41:12,045 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:41:12,048 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:41:12,052 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:41:31,264 - distributed-task-system - WARNING - enhanced_logger:_log_with_context:226 - System health: critical
+2026-03-05 11:41:31,291 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=56.6
+2026-03-05 11:41:31,293 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=91.3
+2026-03-05 11:41:31,295 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:41:31,298 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:41:31,302 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:41:50,483 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: cpu_usage=38.3
+2026-03-05 11:41:50,487 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: memory_usage=91.8
+2026-03-05 11:41:50,491 - distributed-task-system - INFO - enhanced_logger:_log_with_context:226 - Performance: queue_size=0
+2026-03-05 11:41:50,492 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:41:50,497 - distributed-task-system - ERROR - enhanced_logger:_log_with_context:226 - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'

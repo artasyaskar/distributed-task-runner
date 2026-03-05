@@ -2452,3 +2452,370 @@ WHERE tasks.id = ?
 2026-03-05 11:35:57,382 - watchfiles.main - INFO - 1 change detected
 2026-03-05 11:35:57,798 - watchfiles.main - INFO - 1 change detected
 2026-03-05 11:35:58,164 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:35:58,581 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:35:59,088 - watchfiles.main - INFO - 155 changes detected
+2026-03-05 11:35:59,532 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:35:59,947 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:00,362 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:00,729 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:01,153 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:01,567 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:01,982 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:02,398 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:02,811 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:03,227 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:03,731 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:04,146 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:04,600 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:05,061 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:05,476 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:05,843 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:06,110 - root - ERROR - Error getting queue size: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:36:06,260 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:06,675 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:07,077 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:07,481 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:07,894 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:08,309 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:08,726 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:09,092 - watchfiles.main - INFO - 7 changes detected
+2026-03-05 11:36:09,503 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:09,909 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:10,165 - root - ERROR - Error getting processing count: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:36:10,166 - root - WARNING - System alert: High memory usage: 84.30%
+2026-03-05 11:36:10,167 - distributed-task-system - INFO - Performance: cpu_usage=49.5
+2026-03-05 11:36:10,168 - distributed-task-system - INFO - Performance: memory_usage=84.3
+2026-03-05 11:36:10,170 - distributed-task-system - INFO - Performance: queue_size=0
+2026-03-05 11:36:10,172 - distributed-task-system - ERROR - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:36:10,174 - distributed-task-system - ERROR - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:36:10,316 - watchfiles.main - INFO - 6 changes detected
+2026-03-05 11:36:10,830 - watchfiles.main - INFO - 6 changes detected
+2026-03-05 11:36:11,292 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:11,656 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:12,123 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:12,539 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:12,942 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:13,356 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:13,770 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:14,175 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:14,532 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:14,997 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:15,406 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:15,822 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:16,237 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:16,653 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:17,022 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:17,432 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:17,837 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:18,242 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:18,655 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:19,021 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:19,541 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:19,911 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:20,318 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:20,734 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:21,147 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:21,618 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:22,031 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:22,536 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:23,060 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:23,774 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:24,126 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:24,544 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:24,957 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:25,316 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:25,331 - root - ERROR - Error getting queue size: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:36:25,348 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-03-05 11:36:25,350 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-03-05 11:36:25,352 - sqlalchemy.engine.Engine - INFO - [cached since 115.1s ago] (999999,)
+2026-03-05 11:36:25,360 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-03-05 11:36:25,775 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:26,134 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:26,592 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:26,997 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:27,407 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:27,822 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:28,232 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:28,640 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:29,106 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:29,417 - root - ERROR - Error getting processing count: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:36:29,418 - root - WARNING - System alert: High memory usage: 86.90%
+2026-03-05 11:36:29,418 - distributed-task-system - INFO - Performance: cpu_usage=41.8
+2026-03-05 11:36:29,419 - distributed-task-system - INFO - Performance: memory_usage=86.9
+2026-03-05 11:36:29,423 - distributed-task-system - INFO - Performance: queue_size=0
+2026-03-05 11:36:29,425 - distributed-task-system - ERROR - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:36:29,429 - distributed-task-system - ERROR - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:36:29,454 - root - ERROR - Error getting processing count: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:36:29,454 - distributed-task-system - WARNING - System health: critical
+2026-03-05 11:36:29,511 - watchfiles.main - INFO - 6 changes detected
+2026-03-05 11:36:30,069 - watchfiles.main - INFO - 6 changes detected
+2026-03-05 11:36:30,472 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:30,882 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:31,298 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:31,713 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:32,121 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:32,526 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:32,939 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:33,353 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:33,817 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:34,221 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:34,676 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:35,082 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:35,537 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:35,951 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:36,366 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:36,775 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:37,190 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:37,601 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:38,073 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:38,547 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:38,959 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:39,366 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:39,824 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:40,232 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:40,692 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:41,100 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:41,507 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:41,914 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:42,325 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:42,739 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:43,155 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:43,566 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:43,973 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:44,379 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:44,536 - root - ERROR - Error getting queue size: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:36:44,788 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:45,193 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:45,601 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:46,005 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:46,422 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:46,834 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:47,243 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:47,646 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:48,058 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:48,464 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:48,589 - root - ERROR - Error getting processing count: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:36:48,590 - root - WARNING - System alert: High memory usage: 87.60%
+2026-03-05 11:36:48,592 - distributed-task-system - INFO - Performance: cpu_usage=44.2
+2026-03-05 11:36:48,600 - distributed-task-system - INFO - Performance: memory_usage=87.6
+2026-03-05 11:36:48,612 - distributed-task-system - INFO - Performance: queue_size=0
+2026-03-05 11:36:48,623 - distributed-task-system - ERROR - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:36:48,638 - distributed-task-system - ERROR - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:36:48,873 - watchfiles.main - INFO - 6 changes detected
+2026-03-05 11:36:49,279 - watchfiles.main - INFO - 6 changes detected
+2026-03-05 11:36:49,687 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:50,103 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:50,513 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:50,933 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:51,353 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:51,770 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:52,177 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:52,587 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:52,993 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:53,408 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:53,817 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:54,233 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:54,644 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:55,056 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:55,518 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:55,934 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:56,374 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:57,440 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:57,798 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:58,209 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:58,616 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:59,033 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:59,491 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:36:59,897 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:00,308 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:00,722 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:01,133 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:01,549 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:01,957 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:02,365 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:02,772 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:03,174 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:03,581 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:03,763 - root - ERROR - Error getting queue size: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:37:03,774 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-03-05 11:37:03,775 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-03-05 11:37:03,778 - sqlalchemy.engine.Engine - INFO - [cached since 153.5s ago] (999999,)
+2026-03-05 11:37:03,783 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-03-05 11:37:03,986 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:04,447 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:04,814 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:05,277 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:05,685 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:06,097 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:06,506 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:06,915 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:07,328 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:07,682 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:07,828 - root - ERROR - Error getting processing count: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:37:07,829 - root - WARNING - System alert: High memory usage: 90.10%
+2026-03-05 11:37:07,829 - distributed-task-system - INFO - Performance: cpu_usage=39.8
+2026-03-05 11:37:07,834 - distributed-task-system - INFO - Performance: memory_usage=90.1
+2026-03-05 11:37:07,838 - distributed-task-system - INFO - Performance: queue_size=0
+2026-03-05 11:37:07,842 - distributed-task-system - ERROR - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:37:07,845 - distributed-task-system - ERROR - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:37:07,849 - root - ERROR - Error getting processing count: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:37:07,852 - distributed-task-system - WARNING - System health: critical
+2026-03-05 11:37:08,042 - watchfiles.main - INFO - 5 changes detected
+2026-03-05 11:37:08,395 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:08,753 - watchfiles.main - INFO - 6 changes detected
+2026-03-05 11:37:09,262 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:09,626 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:10,028 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:10,434 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:10,916 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:11,281 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:11,702 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:12,122 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:12,528 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:12,939 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:13,393 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:13,798 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:14,267 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:14,675 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:15,151 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:15,571 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:15,983 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:16,400 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:16,876 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:17,302 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:17,720 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:18,131 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:18,537 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:18,949 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:19,361 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:19,826 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:20,231 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:20,636 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:21,045 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:21,455 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:21,913 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:22,329 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:22,744 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:22,960 - root - ERROR - Error getting queue size: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:37:23,151 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:23,669 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:24,079 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:24,538 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:24,946 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:25,405 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:25,814 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:26,329 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:26,736 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:27,022 - root - ERROR - Error getting processing count: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:37:27,023 - root - WARNING - System alert: High memory usage: 91.60%
+2026-03-05 11:37:27,024 - distributed-task-system - INFO - Performance: cpu_usage=43.5
+2026-03-05 11:37:27,025 - distributed-task-system - INFO - Performance: memory_usage=91.6
+2026-03-05 11:37:27,030 - distributed-task-system - INFO - Performance: queue_size=0
+2026-03-05 11:37:27,034 - distributed-task-system - ERROR - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:37:27,038 - distributed-task-system - ERROR - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:37:27,149 - watchfiles.main - INFO - 6 changes detected
+2026-03-05 11:37:27,659 - watchfiles.main - INFO - 6 changes detected
+2026-03-05 11:37:28,070 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:28,476 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:28,881 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:29,291 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:29,795 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:30,249 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:30,605 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:31,067 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:31,420 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:31,875 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:32,281 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:32,689 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:33,199 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:33,610 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:34,029 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:34,442 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:34,848 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:35,264 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:35,672 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:36,081 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:36,493 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:36,947 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:37,353 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:37,763 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:38,167 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:38,575 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:38,982 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:39,391 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:39,898 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:40,316 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:40,728 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:41,136 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:41,598 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:42,056 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:42,145 - root - ERROR - Error getting queue size: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:37:42,147 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-03-05 11:37:42,150 - sqlalchemy.engine.Engine - INFO - SELECT tasks.id AS tasks_id, tasks.task_type AS tasks_task_type, tasks.payload AS tasks_payload, tasks.status AS tasks_status, tasks.result AS tasks_result, tasks.error_message AS tasks_error_message, tasks.retry_count AS tasks_retry_count, tasks.max_retries AS tasks_max_retries, tasks.created_at AS tasks_created_at, tasks.started_at AS tasks_started_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+2026-03-05 11:37:42,151 - sqlalchemy.engine.Engine - INFO - [cached since 191.9s ago] (999999,)
+2026-03-05 11:37:42,158 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-03-05 11:37:42,416 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:42,873 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:43,278 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:43,733 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:44,088 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:44,492 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:44,895 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:45,357 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:45,771 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:46,174 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:46,225 - root - ERROR - Error getting processing count: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:37:46,225 - root - WARNING - System alert: High memory usage: 91.40%
+2026-03-05 11:37:46,225 - distributed-task-system - INFO - Performance: cpu_usage=41.0
+2026-03-05 11:37:46,227 - distributed-task-system - INFO - Performance: memory_usage=91.4
+2026-03-05 11:37:46,232 - distributed-task-system - INFO - Performance: queue_size=0
+2026-03-05 11:37:46,235 - distributed-task-system - ERROR - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:37:46,239 - distributed-task-system - ERROR - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
+2026-03-05 11:37:46,244 - root - ERROR - Error getting processing count: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2026-03-05 11:37:46,246 - distributed-task-system - WARNING - System health: critical
+2026-03-05 11:37:46,538 - watchfiles.main - INFO - 5 changes detected
+2026-03-05 11:37:46,896 - watchfiles.main - INFO - 6 changes detected
+2026-03-05 11:37:47,249 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:47,607 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:48,022 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:48,432 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:48,841 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:49,252 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:49,707 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:50,121 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:50,686 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:51,045 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:51,455 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:51,864 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:52,322 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:52,729 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:53,136 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:53,546 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:53,957 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:54,361 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:54,771 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:55,390 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:55,752 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:56,161 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:56,572 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:56,978 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:57,381 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:58,095 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:58,660 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:59,114 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:37:59,569 - watchfiles.main - INFO - 1 change detected
+2026-03-05 11:38:00,072 - root - INFO - Shutting down Distributed Task Processing System
+2026-03-05 11:38:00,072 - distributed-task-system - INFO - Stopping monitoring service
+2026-03-05 11:38:00,090 - root - INFO - Redis connection closed
+2026-03-05 11:38:00,099 - root - WARNING - System alert: High memory usage: 93.50%
+2026-03-05 11:38:00,099 - distributed-task-system - INFO - Performance: cpu_usage=31.2
+2026-03-05 11:38:00,103 - distributed-task-system - INFO - Performance: memory_usage=93.5
+2026-03-05 11:38:00,107 - distributed-task-system - INFO - Performance: queue_size=0
+2026-03-05 11:38:00,112 - distributed-task-system - ERROR - Error collecting system metrics: EnhancedLogger.warning() got multiple values for argument 'message'
+2026-03-05 11:38:00,117 - distributed-task-system - ERROR - Error in system monitoring loop: 'MonitoringService' object has no attribute '_check_system_health'
