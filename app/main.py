@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 from app.api.tasks import router as tasks_router
 from app.api.retry_management import router as retry_router
 from app.api.monitoring import router as monitoring_router
+from app.api.scaling import router as scaling_router
 from app.core.config import settings
 from app.core.logging import logger
 from app.services.task_queue import task_queue
@@ -72,6 +73,7 @@ app.add_middleware(
 app.include_router(tasks_router)
 app.include_router(retry_router)
 app.include_router(monitoring_router)
+app.include_router(scaling_router)
 
 
 @app.get("/")
